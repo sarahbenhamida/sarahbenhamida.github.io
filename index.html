@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah BENHAMIDA — QA Engineer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+:root {
+  --ink: #111;
+  --bg: #F8F6F2;
+  --white: #fff;
+  --red: #D93D1A;
+  --mid: #555;
+  --light: #999;
+  --rule: #E2DED8;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 48px;
+  background: rgba(248,246,242,0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo span { color: var(--red); }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--red); }
+.lang-switch { display: flex; }
+.lang-btn {
+  padding: 5px 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: none;
+  border: 1px solid var(--rule);
+  cursor: pointer;
+  color: var(--light);
+  transition: all 0.2s;
+}
+.lang-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 48px 80px;
+  border-bottom: 1px solid var(--rule);
+  max-width: 800px;
+}
+.hero-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+.hero-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+.hero-name .accent { color: var(--red); }
+.hero-bio {
+  font-size: 1.05rem;
+  color: var(--mid);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+.hero-bio strong { color: var(--ink); font-weight: 500; }
+.hero-cta { display: flex; gap: 12px; }
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+.btn-dark { background: var(--ink); color: var(--bg); }
+.btn-dark:hover { background: var(--red); }
+.btn-ghost { background: none; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--bg); }
+
+/* SECTIONS */
+section { padding: 80px 48px; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: none; }
+.s-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 32px;
+}
+.s-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.skill-block {
+  background: var(--white);
+  padding: 24px;
+}
+.skill-block-title {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border: 1px solid var(--rule);
+  color: var(--mid);
+  letter-spacing: 0.03em;
+}
+.tag.main { border-color: var(--ink); color: var(--ink); }
+
+/* TESTS COMING */
+.tests-box {
+  border: 1px dashed var(--rule);
+  padding: 48px;
+  text-align: center;
+  max-width: 600px;
+}
+.tests-box-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.tests-box-desc {
+  font-size: 0.85rem;
+  color: var(--light);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: blink 1.6s infinite;
+  vertical-align: middle;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+/* CONTACT */
+.contact-links { display: flex; flex-direction: column; gap: 2px; max-width: 480px; }
+.c-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--white);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.85rem;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+.c-link:hover { border-left-color: var(--red); padding-left: 26px; }
+.c-link-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light); }
+
+/* FOOTER */
+footer {
+  padding: 18px 48px;
+  background: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.2);
+}
+footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: var(--red); }
+
+/* LANG */
+[data-lang] { display: none; }
+body.en [data-lang="en"] { display: revert; }
+body.fr [data-lang="fr"] { display: revert; }
+
+@media (max-width: 680px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .hero, section { padding: 100px 20px 60px; }
+  footer { padding: 16px 20px; flex-direction: column; gap: 4px; }
+}
+</style>
+</head>
+<body class="en">
+
+<nav>
+  <a href="#" class="logo">S<span>.</span>B</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#skills"><span data-lang="en">Skills</span><span data-lang="fr">Compétences</span></a>
+      <a href="#tests"><span data-lang="en">Tests</span><span data-lang="fr">Tests</span></a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">
+    <span>BENHAMIDA Sarah </span>
+    <span data-lang="fr" class="hero-name">QA Engineer</span>
+  </div>
+  <p class="hero-bio">
+    <span data-lang="en">QA Engineer with 3 years of experience on complex business applications. I work on <strong>test automation with Cypress</strong>, functional and regression testing, and bug tracking — in agile environments, alongside product and development teams.</span>
+    <span data-lang="fr">QA Engineer avec 3 ans d'expérience sur des applications métier complexes. Je travaille sur l'<strong>automatisation de tests avec Cypress</strong>, les tests fonctionnels et de non-régression, et le suivi des anomalies — en environnement agile, aux côtés des équipes produit et développement.</span>
+  </p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn btn-dark">
+      <span data-lang="en">Get in touch</span>
+      <span data-lang="fr">Me contacter</span>
+    </a>
+    <a href="#skills" class="btn btn-ghost">
+      <span data-lang="en">Skills</span>
+      <span data-lang="fr">Compétences</span>
+    </a>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="s-label"><span data-lang="en">What I work with</span><span data-lang="fr">Ce avec quoi je travaille</span></div>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <div class="skill-block-title"><span data-lang="en">Automation</span><span data-lang="fr">Automatisation</span></div>
+      <div class="tags">
+        <span class="tag main">Cypress</span>
+        <span class="tag">TestRail</span>
+        <span class="tag">Testlodge</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title"><span data-lang="en">Testing</span><span data-lang="fr">Tests</span></div>
+      <div class="tags">
+        <span class="tag main"><span data-lang="en">Functional</span><span data-lang="fr">Fonctionnels</span></span>
+        <span class="tag"><span data-lang="en">Regression</span><span data-lang="fr">Non-régression</span></span>
+        <span class="tag"><span data-lang="en">Integration</span><span data-lang="fr">Intégration</span></span>
+        <span class="tag">Localization</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Bug Tracking</div>
+      <div class="tags">
+        <span class="tag main">Jira</span>
+        <span class="tag">Zendesk</span>
+        <span class="tag">GitHub Issues</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title"><span data-lang="en">Methods & Tools</span><span data-lang="fr">Méthodes & Outils</span></div>
+      <div class="tags">
+        <span class="tag main">Agile / Scrum</span>
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">Notion</span>
+        <span class="tag">Confluence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTS COMING -->
+<section id="tests">
+  <div class="s-label"><span data-lang="en">Bug reports on public apps</span><span data-lang="fr">Rapports de bugs sur des apps publiques</span></div>
+  <div class="tests-box">
+    <div class="tests-box-title">
+      <span class="dot"></span>
+      <span data-lang="en">Coming soon</span>
+      <span data-lang="fr">Bientôt disponible</span>
+    </div>
+    <p class="tests-box-desc">
+      <span data-lang="en">I'm currently documenting bug reports on public demo applications — structured reproduction steps, severity classification, expected vs. actual results.</span>
+      <span data-lang="fr">Je documente actuellement des rapports de bugs sur des applications de démonstration publiques — étapes de reproduction structurées, classification par sévérité, résultat attendu vs obtenu.</span>
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="s-label">Contact</div>
+  <div class="contact-links">
+    <a href="mailto:contact@email.com" class="c-link">
+      contact@email.com
+      <span class="c-link-label">Email</span>
+    </a>
+    <a href="https://linkedin.com/in/profil" target="_blank" class="c-link">
+      linkedin.com/in/profil
+      <span class="c-link-label">LinkedIn</span>
+    </a>
+    <a href="https://github.com/profil" target="_blank" class="c-link">
+      github.com/profil
+      <span class="c-link-label">GitHub</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Sarah BENHAMIDA</span>
+  <a href="#"><span data-lang="en">Back to top ↑</span><span data-lang="fr">Haut de page ↑</span></a>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.className = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent === lang.toUpperCase());
+  });
+}
+</script>
+</body>
+</html>
