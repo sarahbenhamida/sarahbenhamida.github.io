@@ -1,4 +1,4 @@
-# SARAH BENHAMIDANOM — QA Engineer Portfolio
+# SARAH BENHAMIDA — QA Engineer Portfolio
 
 Personal portfolio website — [sarah.benhamida.github.io](https://sarah.benhamida.github.io)
 
