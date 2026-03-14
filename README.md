@@ -26,5 +26,5 @@ Hosted on GitHub Pages.
 
 ## Contact
 
-- LinkedIn: [linkedin.com/in/sarah.benhamida](https://linkedin.com/in/sarah.benhamida)
+- LinkedIn: [linkedin.com/in/sarah-benhamida](https://linkedin.com/in/sarah-benhamida)
 - Email: sarah.benhamida.sb@gmail.com
